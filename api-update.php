@@ -1,7 +1,7 @@
 <?php 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin:*');
-header('Access-Control-Allow-Method:POST');
+header('Access-Control-Allow-Method:PUT');
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Access-Control-Allow-Method, Content-Type,Authorization,X-Requested-With');
 
 include 'db-conn.php';
