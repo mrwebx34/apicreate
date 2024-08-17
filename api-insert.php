@@ -6,15 +6,15 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Access-Control
 include "db-conn.php";
 
 $data =json_decode(file_get_contents("php://input"),true);
-$student_name=$data['sname'];
-$student_class=$data['sclass'];
-$student_age=$data['sage'];
+$student_name=$data['sname']??null;
+$student_class=$data['sclass']??null;
+$student_age=$data['sage']??null;
 
-    $student_id = $data['sid'];
+//  $student_id = $data['sid'];
 
 $sql ="INSERT INTO students( name , class , age) VALUES('{$student_name}','{$student_class}','{$student_age}')";
 
-$result=mysqli_query($conn,$sql) or die('Sql query failed');
+// $result=mysqli_query($conn,$sql) or die('Sql query failed');
 
 if(mysqli_query($conn,$sql)){
   
@@ -25,3 +25,4 @@ else{
 }
 
 ?>
+
